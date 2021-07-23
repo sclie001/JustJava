@@ -44,7 +44,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:layout_marginBottom="16dp"
-            android:text="@string/quanity_text"
+            android:text="@string/quantity_text"
             android:textAllCaps="true" />
 
         <LinearLayout
@@ -60,12 +60,12 @@
                 android:text="@string/decrement_button" />
 
             <TextView
-                android:id="@+id/quanity_num"
+                android:id="@+id/quantity_num"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingLeft="8dp"
                 android:paddingRight="8dp"
-                android:text="@string/quanity_num"
+                android:text="@string/quantity_num"
                 android:textColor="@color/black"
                 android:textSize="16sp" />
 
