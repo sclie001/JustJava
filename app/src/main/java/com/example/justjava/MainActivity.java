@@ -26,8 +26,10 @@ public class MainActivity extends AppCompatActivity {
         int price = calculatePrice();
         CheckBox whippedCreamCheckBox = findViewById(R.id.whipped_cream_checkBox);
         boolean hasWhippedCream = whippedCreamCheckBox.isChecked();
+        CheckBox chocolateCheckBox = findViewById(R.id.chocolate_checkBox);
+        boolean hasChocolate = chocolateCheckBox.isChecked();
         //Log.v("MainActivity", "Has whipped cream: " + hasWhippedCream);
-        displayMessage(createOrderSummary(price, hasWhippedCream));
+        displayMessage(createOrderSummary(price, hasWhippedCream, hasChocolate));
     }
 
     /**
@@ -41,21 +43,24 @@ public class MainActivity extends AppCompatActivity {
     /**
      * Creates a summary of the order
      * @param price of the order
+     * @param hasWhippedCream is whether or not the user wants whipped cream
+     * @param addChocolate is whether or not the user wants chocolate topping
      * @return text summary
      */
-    private String createOrderSummary(int price, boolean hasWhippedCream){
+    private String createOrderSummary(int price, boolean hasWhippedCream, boolean addChocolate){
         String name = "Kaptian Kunal";
         String priceMessage = "Name: " + name + "\n" + "Add whipped cream? "+
-                hasWhippedCream + "\n" + "Quantity: " + quantity
-                + "\n" + "Total: " + price + "\n" + "Thank you!";
+                hasWhippedCream + "\n" + "Add chocolate? " + addChocolate
+                + "\n" + "Quantity: " + quantity + "\n" + "Total: " + price + "\n"
+                + "Thank you!";
         return priceMessage;
     }
 
     /**
-     * This method displays the given quantity value on the screen
+     * This method displays the given quantity value on the screen.
      */
     private void displayQuantity(int numberOfCoffees){
-        TextView quantity = (TextView) findViewById(R.id.quanity_num);
+        TextView quantity = (TextView) findViewById(R.id.quantity_num);
         quantity.setText("" + numberOfCoffees);
     }
 

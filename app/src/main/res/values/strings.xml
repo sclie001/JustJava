@@ -1,9 +1,10 @@
 <resources>
     <string name="app_name">Just Java</string>
     <string name="toppings_text">Toppings</string>
-    <string name="checkbox_text">Wipped cream</string>
-    <string name="quanity_text">Quanity</string>
-    <string name="quanity_num">2</string>
+    <string name="checkbox_text">Whipped cream</string>
+    <string name="chocolate_text">Chocolate</string>
+    <string name="quantity_text">Quanity</string>
+    <string name="quantity_num">2</string>
     <string name="increment_button">+</string>
     <string name="decrement_button">-</string>
     <string name="order_button">Order</string>
