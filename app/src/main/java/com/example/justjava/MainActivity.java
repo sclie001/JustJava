@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
     private String createOrderSummary(int price, boolean hasWhippedCream, boolean addChocolate){
         String name = "Kaptian Kunal";
         String priceMessage = "Name: " + name + "\n" + "Add whipped cream? "+
-                hasWhippedCream + "\n" + "Add chocolate? " + "\n" + addChocolate
+                hasWhippedCream + "\n" + "Add chocolate? " + addChocolate
                 + "\n" + "Quantity: " + quantity + "\n" + "Total: " + price + "\n"
                 + "Thank you!";
         return priceMessage;
@@ -60,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
      * This method displays the given quantity value on the screen.
      */
     private void displayQuantity(int numberOfCoffees){
-        TextView quantity = (TextView) findViewById(R.id.quanity_num);
+        TextView quantity = (TextView) findViewById(R.id.quantity_num);
         quantity.setText("" + numberOfCoffees);
     }
 
