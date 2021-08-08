@@ -45,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
         int price = calculatePrice(hasChocolate, hasWhippedCream);
         String Ordermessage = createOrderSummary(price, name, hasWhippedCream, hasChocolate);
 
+        //allows user to send order summary to his/her email, using email app
         Intent intent = new Intent(Intent.ACTION_SENDTO);
         intent.setData(Uri.parse("mailto:"));//only email apps should handle
         String subject = "Coffee Order Summary for " + name;
