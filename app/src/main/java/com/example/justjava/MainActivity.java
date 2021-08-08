@@ -1,5 +1,7 @@
 package com.example.justjava;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.CheckBox;
@@ -41,7 +43,16 @@ public class MainActivity extends AppCompatActivity {
         //Log.v("MainActivity", "Has chocolate: " + chocolate_checkBox);
 
         int price = calculatePrice(hasChocolate, hasWhippedCream);
-        displayMessage(createOrderSummary(price, name, hasWhippedCream, hasChocolate));
+        String Ordermessage = createOrderSummary(price, name, hasWhippedCream, hasChocolate);
+
+        Intent intent = new Intent(Intent.ACTION_SENDTO);
+        intent.setData(Uri.parse("mailto:"));//only email apps should handle
+        String subject = "Coffee Order Summary for " + name;
+        intent.putExtra(Intent.EXTRA_SUBJECT, subject);
+        intent.putExtra(Intent.EXTRA_TEXT, Ordermessage);
+        if (intent.resolveActivity(getPackageManager()) != null) {
+            startActivity(intent);
+        }
     }
 
     /**
