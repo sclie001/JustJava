@@ -87,7 +87,7 @@ public class MainActivity extends AppCompatActivity {
      * @return text summary
      */
     private String createOrderSummary(int price, String name, boolean hasWhippedCream, boolean addChocolate){
-        String priceMessage = "Name: " + name + "\n" + "Add whipped cream? "+
+        String priceMessage = "Name: " + name + "\n" + "Add whipped cream? " +
                 hasWhippedCream + "\n" + "Add chocolate? " + addChocolate
                 + "\n" + "Quantity: " + quantity + "\n" + "Total: " + price + "\n"
                 + "Thank you!";
@@ -100,14 +100,6 @@ public class MainActivity extends AppCompatActivity {
     private void displayQuantity(int numberOfCoffees){
         TextView quantity = (TextView) findViewById(R.id.quantity_num);
         quantity.setText("" + numberOfCoffees);
-    }
-
-    /**
-     * This method displays the given text on the screen.
-     */
-    private void displayMessage(String message) {
-        TextView orderSummaryTextView = (TextView) findViewById(R.id.order_summary_text_view);
-        orderSummaryTextView.setText(message);
     }
 
     /**

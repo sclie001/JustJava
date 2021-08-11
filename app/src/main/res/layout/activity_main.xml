@@ -36,7 +36,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingLeft="24dp"
-            android:text="@string/checkbox_text"
+            android:text="@string/whippedCream_text"
             android:textSize="16sp" />
 
         <CheckBox
@@ -86,22 +86,6 @@
                 android:text="@string/increment_button" />
 
         </LinearLayout>
-
-        <TextView
-            android:id="@+id/order_summary_header"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:layout_marginBottom="16dp"
-            android:text="@string/order_summary_text"
-            android:textAllCaps="true" />
-
-        <TextView
-            android:id="@+id/order_summary_text_view"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/order_summary"
-            android:textColor="@color/black" />
 
         <Button
             android:id="@+id/button"
