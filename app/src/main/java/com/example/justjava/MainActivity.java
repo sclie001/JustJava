@@ -48,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
         //allows user to send order summary to his/her email, using email app
         Intent intent = new Intent(Intent.ACTION_SENDTO);
         intent.setData(Uri.parse("mailto:"));//only email apps should handle
-        String subject = "Coffee Order Summary for " + name;
+        String subject = getString(R.string.email_subject, name);
         intent.putExtra(Intent.EXTRA_SUBJECT, subject);
         intent.putExtra(Intent.EXTRA_TEXT, Ordermessage);
         if (intent.resolveActivity(getPackageManager()) != null) {
@@ -86,12 +86,41 @@ public class MainActivity extends AppCompatActivity {
      * @param name of the customer
      * @return text summary
      */
-    private String createOrderSummary(int price, String name, boolean hasWhippedCream, boolean addChocolate){
-        String priceMessage = "Name: " + name + "\n" + "Add whipped cream? " +
-                hasWhippedCream + "\n" + "Add chocolate? " + addChocolate
-                + "\n" + "Quantity: " + quantity + "\n" + "Total: " + price + "\n"
-                + "Thank you!";
+    private String createOrderSummary(int price, String name, boolean hasWhippedCream,
+                                      boolean addChocolate){
+        String whipped = hasWhippedCream(hasWhippedCream);
+        String chocolate = hasChocolate(addChocolate);
+        String priceMessage = getString(R.string.order_summary_name, name) + "\n" +
+                getString(R.string.order_summary_add_whipped_cream, whipped) + "\n" +
+                getString(R.string.order_summary_add_chocolate,chocolate) + "\n" +
+                getString(R.string.order_summary_quantity, quantity) + "\n" +
+                getString(R.string.order_summary_total, price) + "\n" +
+                getString(R.string.thank_you);
         return priceMessage;
+    }
+
+    /**
+     *
+     * @param addWhippedCream is whether or not user wants whipped cream topping
+     * @return yes or no
+     */
+    private String hasWhippedCream(boolean addWhippedCream){
+        if(addWhippedCream){
+            return "Yes";
+        }
+        return "No";
+    }
+
+    /**
+     *
+     * @param addChocolate is whether the user wants chocolate topping
+     * @return yes or no
+     */
+    private String hasChocolate(boolean addChocolate){
+        if(addChocolate){
+            return "Yes";
+        }
+        return "No";
     }
 
     /**

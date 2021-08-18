@@ -1,12 +1,44 @@
-<resources>
-    <string name="app_name">Just Java</string>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="app_name" translatable="false">Just Java</string>
     <string name="name_hint">Name</string>
+    <!-- Header text for the list of toppings [CHAR LIMIT=20] -->
     <string name="toppings_text">Toppings</string>
+
+    <!--Whipped Cream Check box text for the kind of topping [CHAR LIMIT=20] -->
     <string name="whippedCream_text">Whipped cream</string>
+
+    <!-- Chocolate check box text for the kind of topping [CHAR LIMIT=-20] -->
     <string name="chocolate_text">Chocolate</string>
-    <string name="quantity_text">Quanity</string>
-    <string name="quantity_num">2</string>
-    <string name="increment_button">+</string>
-    <string name="decrement_button">-</string>
+
+    <!-- Header text for the quantity of drinks the user wants to order -->
+    <string name="quantity_text">Quantity</string>
+
+    <string name="quantity_num" translatable="false">2</string>
+    <string name="increment_button" translatable="false">+</string>
+    <string name="decrement_button" translatable="false">-</string>
+
+    <!-- button text for the user to press in order to place the order -->
     <string name="order_button">Order</string>
+
+    <!-- Thank you message for the order summary [CHAR LIMIT=NONE] -->
+    <string name="thank_you">Thank You!</string>
+
+    <!--Name for the order summary. It will be shown in the format, "Name: Amy"
+    where Amy is the user's name. [CHAR LIMIT=NONE] -->
+    <string name="order_summary_name">Name: <xliff:g id="name" example="Amy"> %s</xliff:g></string>
+
+    <!-- Topping questions on the order summary along with yes/no values -->
+    <string name="order_summary_add_whipped_cream">Add whipped cream?
+        <xliff:g id="whipped_cream">%s</xliff:g></string>
+    <string name="order_summary_add_chocolate">Add chocolate?
+        <xliff:g id="choclate">%s</xliff:g></string>
+
+    <!-- Quantity of coffees user ordered for order summary -->
+    <string name="order_summary_quantity">Quantity: <xliff:g id="quantity" example="2"> %d</xliff:g></string>
+
+    <!-- Price total for the order summary -->
+    <string name="order_summary_total">Total: <xliff:g id="bill_total" example="10"> %d</xliff:g></string>
+
+    <!--subject for email -->
+    <string name="email_subject">Coffee Order Summary for <xliff:g id="name" example="Amy">%s</xliff:g></string>
 </resources>
