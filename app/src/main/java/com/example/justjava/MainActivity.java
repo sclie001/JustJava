@@ -100,7 +100,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     *
+     * Determine whether user selected whipped cream topping
      * @param addWhippedCream is whether or not user wants whipped cream topping
      * @return yes or no
      */
@@ -112,9 +112,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     *
+     * Determine whether user selected chocolate topping
      * @param addChocolate is whether the user wants chocolate topping
-     * @return yes or no
+     * @return yes or no 
      */
     private String hasChocolate(boolean addChocolate){
         if(addChocolate){
@@ -125,6 +125,7 @@ public class MainActivity extends AppCompatActivity {
 
     /**
      * This method displays the given quantity value on the screen.
+     * @param numberOfCoffees quantity of coffees the user requested
      */
     private void displayQuantity(int numberOfCoffees){
         TextView quantity = (TextView) findViewById(R.id.quantity_num);

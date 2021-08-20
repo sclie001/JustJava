@@ -31,13 +31,13 @@
     <string name="order_summary_add_whipped_cream">Add whipped cream?
         <xliff:g id="whipped_cream">%s</xliff:g></string>
     <string name="order_summary_add_chocolate">Add chocolate?
-        <xliff:g id="choclate">%s</xliff:g></string>
+        <xliff:g id="chocolate">%s</xliff:g></string>
 
     <!-- Quantity of coffees user ordered for order summary -->
     <string name="order_summary_quantity">Quantity: <xliff:g id="quantity" example="2"> %d</xliff:g></string>
 
     <!-- Price total for the order summary -->
-    <string name="order_summary_total">Total: <xliff:g id="bill_total" example="10"> %d</xliff:g></string>
+    <string name="order_summary_total">Total: <xliff:g id="bill_total" example="10">"$"%d</xliff:g></string>
 
     <!--subject for email -->
     <string name="email_subject">Coffee Order Summary for <xliff:g id="name" example="Amy">%s</xliff:g></string>

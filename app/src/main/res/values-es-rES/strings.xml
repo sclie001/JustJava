@@ -33,6 +33,6 @@
     <string name="order_summary_quantity">Cantidad: <xliff:g id="quantity" example="2"> %d</xliff:g></string>
 
     <!-- Price total for the order summary -->
-    <string name="order_summary_total">Total: <xliff:g id="bill_total" example="10"> %d</xliff:g></string>
+    <string name="order_summary_total">Total: <xliff:g id="bill_total" example="10">"$"%d</xliff:g></string>
     <string name="email_subject">Resumen del pedido de cafe por <xliff:g id="name" example="Amy">%s</xliff:g></string>
 </resources>
