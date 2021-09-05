@@ -1,10 +1,24 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="app_name" translatable="false">Just Java</string>
+    <!-- text field for name -->
     <string name="name_hint">Name</string>
+
+    <!-- Header text for coffee types [CHAR LIMIT=20] -->
+    <string name="coffee_type_text">Coffee Types</string>
+
+    <!-- Regular coffee radio button text for the type of coffee [CHAR LIMIT=20] -->
+    <string name="regularCoffee_text">Regular Coffee</string>
+
+    <!-- Iced coffee radio button text for the type of coffee [CHAR LIMIT=20] -->
+    <string name="icedCoffee_text">Iced Coffee</string>
+
+    <!-- Hot latte radio button text for the type of coffee [CHAR LIMIT=20] -->
+    <string name="hotLatte_text">Hot Latte</string>
+
     <!-- Header text for the list of toppings [CHAR LIMIT=20] -->
     <string name="toppings_text">Toppings</string>
 
-    <!--Whipped Cream Check box text for the kind of topping [CHAR LIMIT=20] -->
+    <!--Whipped Cream check box text for the kind of topping [CHAR LIMIT=20] -->
     <string name="whippedCream_text">Whipped cream</string>
 
     <!-- Chocolate check box text for the kind of topping [CHAR LIMIT=-20] -->
@@ -26,6 +40,9 @@
     <!--Name for the order summary. It will be shown in the format, "Name: Amy"
     where Amy is the user's name. [CHAR LIMIT=NONE] -->
     <string name="order_summary_name">Name: <xliff:g id="name" example="Amy"> %s</xliff:g></string>
+
+    <!-- Coffee Types questions on the order summary along with it's text value -->
+    <string name="order_summary_coffee_type">Coffee type: %s</string>
 
     <!-- Topping questions on the order summary along with yes/no values -->
     <string name="order_summary_add_whipped_cream">Add whipped cream?

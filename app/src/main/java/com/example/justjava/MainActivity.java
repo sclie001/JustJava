@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -31,6 +33,10 @@ public class MainActivity extends AppCompatActivity {
         String name = nameField.getText().toString();
         //Log.v("MainActivity", "What is your name: " + name);
 
+        //Figure out what type of coffee the user wants
+        RadioButton radioBtnSelected = onRadioButtonClicked();
+
+
         //Figure out if the user wants whipped cream topping
         CheckBox whippedCreamCheckBox = findViewById(R.id.whipped_cream_checkBox);
         boolean hasWhippedCream = whippedCreamCheckBox.isChecked();
@@ -42,18 +48,31 @@ public class MainActivity extends AppCompatActivity {
         boolean hasChocolate = chocolateCheckBox.isChecked();
         //Log.v("MainActivity", "Has chocolate: " + chocolate_checkBox);
 
-        int price = calculatePrice(hasChocolate, hasWhippedCream);
-        String Ordermessage = createOrderSummary(price, name, hasWhippedCream, hasChocolate);
+        int price = calculatePrice(hasChocolate, hasWhippedCream, radioBtnSelected);
+        String OrderMessage = createOrderSummary(price, name, hasWhippedCream,
+                hasChocolate, radioBtnSelected);
 
         //allows user to send order summary to his/her email, using email app
         Intent intent = new Intent(Intent.ACTION_SENDTO);
         intent.setData(Uri.parse("mailto:"));//only email apps should handle
         String subject = getString(R.string.email_subject, name);
         intent.putExtra(Intent.EXTRA_SUBJECT, subject);
-        intent.putExtra(Intent.EXTRA_TEXT, Ordermessage);
+        intent.putExtra(Intent.EXTRA_TEXT, OrderMessage);
         if (intent.resolveActivity(getPackageManager()) != null) {
             startActivity(intent);
         }
+    }
+
+    /**
+     * Determine which radio button was selected for coffee type
+     * @return radio button
+     */
+    public RadioButton onRadioButtonClicked(){
+        RadioGroup radioGroup = findViewById(R.id.radioCoffeeType);
+        int selectedID = radioGroup.getCheckedRadioButtonId();
+        RadioButton coffeeType = findViewById(selectedID);
+
+        return coffeeType;
     }
 
     /**
@@ -62,10 +81,17 @@ public class MainActivity extends AppCompatActivity {
      * @param addWhippedCream whether or not the user wants whipped cream topping
      * @return total price
      */
-    private int calculatePrice(boolean addChocolate, boolean addWhippedCream){
+    private int calculatePrice(boolean addChocolate, boolean addWhippedCream, RadioButton radioButton){
         int chargeForChocolate = 2;
         int chargeForWhippedCream = 1;
-        int basePrice = 5;
+        int basePrice = 2;
+
+        if(radioButton.getId() == R.id.icedCoffee){
+            basePrice = 3;
+        }
+        else if(radioButton.getId() == R.id.hotLatte){
+            basePrice = 4;
+        }
 
         //add $1 if the user selects the whipped cream topping
         if(addWhippedCream){
@@ -87,10 +113,12 @@ public class MainActivity extends AppCompatActivity {
      * @return text summary
      */
     private String createOrderSummary(int price, String name, boolean hasWhippedCream,
-                                      boolean addChocolate){
+                                      boolean addChocolate, RadioButton coffeeType){
         String whipped = hasWhippedCream(hasWhippedCream);
         String chocolate = hasChocolate(addChocolate);
-        String priceMessage = getString(R.string.order_summary_name, name) + "\n" +
+
+        String priceMessage = getString(R.string.order_summary_name,name) + "\n" +
+                getString(R.string.order_summary_coffee_type, coffeeType.getText()) + "\n" +
                 getString(R.string.order_summary_add_whipped_cream, whipped) + "\n" +
                 getString(R.string.order_summary_add_chocolate,chocolate) + "\n" +
                 getString(R.string.order_summary_quantity, quantity) + "\n" +
@@ -129,7 +157,8 @@ public class MainActivity extends AppCompatActivity {
      */
     private void displayQuantity(int numberOfCoffees){
         TextView quantity = (TextView) findViewById(R.id.quantity_num);
-        quantity.setText("" + numberOfCoffees);
+        String coffees = "" + numberOfCoffees;
+        quantity.setText(coffees);
     }
 
     /**

@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="thank_you">Gracias!</string>
+    <string name="name_hint">Nombre</string>
+
+    <string name="coffee_type_text">Tipo de café</string>
+    <string name="regularCoffee_text">Café regular</string>
+    <string name="icedCoffee_text">Café  helado</string>
+    <string name="hotLatte_text">Café  con leche caliente</string>
 
     <!-- Header text for the list of toppings [CHAR LIMIT=20] -->
     <string name="toppings_text">Ingredientes</string>
-
-    <string name="name_hint">Nombre</string>
 
     <!--Whipped Cream Check box text for the kind of topping [CHAR LIMIT=20] -->
     <string name="whippedCream_text">Crema batida</string>
@@ -34,5 +38,7 @@
 
     <!-- Price total for the order summary -->
     <string name="order_summary_total">Total: <xliff:g id="bill_total" example="10">"$"%d</xliff:g></string>
-    <string name="email_subject">Resumen del pedido de cafe por <xliff:g id="name" example="Amy">%s</xliff:g></string>
+    <string name="email_subject">Resumen del pedido de café por <xliff:g id="name" example="Amy">%s</xliff:g></string>
+    <string name="order_summary_coffee_type">Tipo de café: %s</string>
+
 </resources>

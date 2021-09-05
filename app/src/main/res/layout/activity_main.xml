@@ -20,7 +20,41 @@
             android:layout_height="wrap_content"
             android:hint="@string/name_hint"
             android:inputType=
-                "textAutoComplete|textCapWords|textPersonName"/>
+                "textAutoComplete|textCapWords|textPersonName" />
+
+        <TextView
+            android:id="@+id/coffee_types"
+            style="@style/HeaderTextStyle"
+            android:text="@string/coffee_type_text" />
+
+        <RadioGroup
+            android:id="@+id/radioCoffeeType"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <RadioButton
+                android:id="@+id/regularCoffee"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="24dp"
+                android:text="@string/regularCoffee_text"
+                android:textSize="16sp"/>
+
+            <RadioButton
+                android:id="@+id/icedCoffee"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="24dp"
+                android:text="@string/icedCoffee_text"
+                android:textSize="16sp" />
+
+            <RadioButton
+                android:id="@+id/hotLatte"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="24dp"
+                android:text="@string/hotLatte_text"
+                android:textSize="16sp"/>
+        </RadioGroup>
 
         <TextView
             android:id="@+id/toppings_header"
