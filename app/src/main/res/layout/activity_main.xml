@@ -57,6 +57,41 @@
         </RadioGroup>
 
         <TextView
+            android:id="@+id/milk_substitutions"
+            style="@style/HeaderTextStyle"
+            android:text="@string/milk_substitution" />
+
+        <RadioGroup
+            android:id="@+id/radioSubstitutions"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <RadioButton
+                android:id="@+id/soyMilk"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="24dp"
+                android:text="@string/soyMilk_text"
+                android:textSize="16sp"/>
+
+            <RadioButton
+                android:id="@+id/coconutMilk"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="24dp"
+                android:text="@string/coconutMilk_text"
+                android:textSize="16sp" />
+
+            <RadioButton
+                android:id="@+id/noSubstitution"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="24dp"
+                android:text="@string/noSubstitution"
+                android:textSize="16sp" />
+        </RadioGroup>
+
+
+        <TextView
             android:id="@+id/toppings_header"
             style="@style/HeaderTextStyle"
             android:text="@string/toppings_text" />

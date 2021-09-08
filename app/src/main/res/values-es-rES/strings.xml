@@ -17,10 +17,22 @@
     <!-- Chocolate check box text for the kind of topping [CHAR LIMIT=-20] -->
     <string name="chocolate_text">Chocolate</string>
 
+    <!-- Header text for Milk substitutions [CHAR LIMIT=-20] -->
+    <string name="milk_substitution">Sustitucion de leche</string>
+
+    <!-- Radio button text for soy milk substitution [CHAR LIMIT=-20] -->
+    <string name="soyMilk_text">Leche de soja</string>
+
+    <!-- Radio button text for coconut milk substitution [CHAR LIMIT=-20] -->
+    <string name="coconutMilk_text">Leche de coco</string>
+
+    <!-- Radio button text for no substitution [CHAR LIMIT=20] -->
+    <string name="noSubstitution">Ninguno</string>
+
     <!-- Header text for the quantity of drinks the user wants to order -->
     <string name="quantity_text">Cantidad</string>
 
-    <!-- button text for the user to press in order to place the order -->
+    <!-- Button text for the user to press in order to place the order -->
     <string name="order_button">Ordenar</string>
 
     <!-- Topping questions on the order summary along with yes/no values -->
@@ -40,5 +52,6 @@
     <string name="order_summary_total">Total: <xliff:g id="bill_total" example="10">"$"%d</xliff:g></string>
     <string name="email_subject">Resumen del pedido de café por <xliff:g id="name" example="Amy">%s</xliff:g></string>
     <string name="order_summary_coffee_type">Tipo de café: %s</string>
+    <string name="order_summary_milkSubstitution">Sustitucion de leche: %s</string>
 
 </resources>
