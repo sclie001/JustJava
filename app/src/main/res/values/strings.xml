@@ -36,6 +36,18 @@
     <!-- Radio button text for no substitution [CHAR LIMIT=20] -->
     <string name="noSubstitution">None</string>
 
+    <!-- Header text for espresso shot options [CHAR LIMIT=20]-->
+    <string name="shotOptions_text">Espresso shot options</string>
+
+    <!-- Radio button text for single shot [CHAR LIMIT=20] -->
+    <string name="singleShot_text">Single shot</string>
+
+    <!-- Radio button text for double shot [CHAR LIMIT=20] -->
+    <string name="doubleShot_text">Double shot</string>
+
+    <!-- Radio button text for no shot [CHAR LIMIT=20] -->
+    <string name="noEspressoShot_text">None</string>
+
     <!-- Header text for the quantity of drinks the user wants to order -->
     <string name="quantity_text">Quantity</string>
 
@@ -64,6 +76,9 @@
         <xliff:g id="whipped_cream">%s</xliff:g></string>
     <string name="order_summary_add_chocolate">Add chocolate?
         <xliff:g id="chocolate">%s</xliff:g></string>
+
+    <!-- Espresso shot option question on the order summary along with yes/no values -->
+    <string name="order_summary_espressoShotOption">Espresso shot?: %s</string>
 
     <!-- Quantity of coffees user ordered for order summary -->
     <string name="order_summary_quantity">Quantity: <xliff:g id="quantity" example="2"> %d</xliff:g></string>

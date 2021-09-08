@@ -90,6 +90,39 @@
                 android:textSize="16sp" />
         </RadioGroup>
 
+        <TextView
+            android:id="@+id/shotOptions_header"
+            style="@style/HeaderTextStyle"
+            android:text="@string/shotOptions_text" />
+
+        <RadioGroup
+            android:id="@+id/radioEspressoShotOptions"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/shotOptions_text">
+
+            <RadioButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="24dp"
+                android:text="@string/singleShot_text"
+                android:textSize="16sp"/>
+
+            <RadioButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="24dp"
+                android:text="@string/doubleShot_text"
+                android:textSize="16sp"/>
+
+            <RadioButton
+                android:id="@+id/noEspressoShot"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="24dp"
+                android:text="@string/noEspressoShot_text"
+                android:textSize="16sp" />
+        </RadioGroup>
 
         <TextView
             android:id="@+id/toppings_header"

@@ -29,6 +29,15 @@
     <!-- Radio button text for no substitution [CHAR LIMIT=20] -->
     <string name="noSubstitution">Ninguno</string>
 
+    <!-- Header text for expresso options [CHAR LIMIT=20] -->
+    <string name="shotOptions_text">Opciones de disparo expresso</string>
+
+    <!-- Radio button text for a single shot [CHAR LIMIT=20] -->
+    <string name="singleShot_text">Disparo único</string>
+
+    <!-- Radio button text for a double shot [CHAR LIMIT=20] -->
+    <string name="doubleShot_text">Doble disparo</string>
+
     <!-- Header text for the quantity of drinks the user wants to order -->
     <string name="quantity_text">Cantidad</string>
 
@@ -53,5 +62,8 @@
     <string name="email_subject">Resumen del pedido de café por <xliff:g id="name" example="Amy">%s</xliff:g></string>
     <string name="order_summary_coffee_type">Tipo de café: %s</string>
     <string name="order_summary_milkSubstitution">Sustitucion de leche: %s</string>
+    <string name="noExpressoShot_text">Ninguno</string>
+    <string name="noEspressoShot_text">Ninguno</string>
+    <string name="order_summary_espressoShotOption">Disparo de espresso?: %s</string>
 
 </resources>
