@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
         //Log.v("MainActivity", "What is your name: " + name);
 
         //Figure out what type of coffee the user wants
-        RadioButton radioBtnSelected = onRadioButtonClicked();
+        RadioButton radioBtnSelected = onRadioButtonClickedCoffeType();
 
 
         //Figure out if the user wants whipped cream topping
@@ -67,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
      * Determine which radio button was selected for coffee type
      * @return radio button
      */
-    public RadioButton onRadioButtonClicked(){
+    public RadioButton onRadioButtonClickedCoffeType(){
         RadioGroup radioGroup = findViewById(R.id.radioCoffeeType);
         int selectedID = radioGroup.getCheckedRadioButtonId();
         RadioButton coffeeType = findViewById(selectedID);
@@ -79,17 +79,18 @@ public class MainActivity extends AppCompatActivity {
      * calculates the price of the order
      * @param addChocolate whether or not the user wants chocolate topping
      * @param addWhippedCream whether or not the user wants whipped cream topping
+     * @param coffeeType coffee type user selected to order
      * @return total price
      */
-    private int calculatePrice(boolean addChocolate, boolean addWhippedCream, RadioButton radioButton){
+    private int calculatePrice(boolean addChocolate, boolean addWhippedCream, RadioButton coffeeType){
         int chargeForChocolate = 2;
         int chargeForWhippedCream = 1;
         int basePrice = 2;
 
-        if(radioButton.getId() == R.id.icedCoffee){
+        if(coffeeType.getId() == R.id.icedCoffee){
             basePrice = 3;
         }
-        else if(radioButton.getId() == R.id.hotLatte){
+        else if(coffeeType.getId() == R.id.hotLatte){
             basePrice = 4;
         }
 
@@ -110,6 +111,7 @@ public class MainActivity extends AppCompatActivity {
      * @param hasWhippedCream is whether or not the user wants whipped cream
      * @param addChocolate is whether or not the user wants chocolate topping
      * @param name of the customer
+     * @param coffeeType coffee type user selected to order
      * @return text summary
      */
     private String createOrderSummary(int price, String name, boolean hasWhippedCream,
