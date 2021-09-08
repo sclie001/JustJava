@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
         //Log.v("MainActivity", "What is your name: " + name);
 
         //Figure out what type of coffee the user wants
-        RadioButton radioBtnSelected = onRadioButtonClickedCoffeType();
+        RadioButton radioBtnSelected = onRadioButtonClickedCoffeeType();
 
 
         //Figure out if the user wants whipped cream topping
@@ -65,9 +65,9 @@ public class MainActivity extends AppCompatActivity {
 
     /**
      * Determine which radio button was selected for coffee type
-     * @return radio button
+     * @return coffee type selected
      */
-    public RadioButton onRadioButtonClickedCoffeType(){
+    public RadioButton onRadioButtonClickedCoffeeType(){
         RadioGroup radioGroup = findViewById(R.id.radioCoffeeType);
         int selectedID = radioGroup.getCheckedRadioButtonId();
         RadioButton coffeeType = findViewById(selectedID);
