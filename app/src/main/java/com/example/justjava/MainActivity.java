@@ -111,12 +111,7 @@ public class MainActivity extends AppCompatActivity {
      * @param coffeeType coffee type user selected to order
      * @return total price
      */
-<<<<<<< HEAD
     private int calculatePrice(boolean addChocolate, boolean addWhippedCream, RadioButton coffeeType){
-=======
-    private int calculatePrice(boolean addChocolate, boolean addWhippedCream,
-                               RadioButton radioButton){
->>>>>>> substitutions
         int chargeForChocolate = 2;
         int chargeForWhippedCream = 1;
         int basePrice = 2;
