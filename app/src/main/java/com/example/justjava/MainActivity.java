@@ -36,21 +36,26 @@ public class MainActivity extends AppCompatActivity {
         //Figure out what type of coffee the user wants
         RadioButton radioBtnSelected = onRadioButtonClickedCoffeeType();
 
+        //Figure out the milk substitution selected
+        RadioButton milkSubstitutionSelected = onRadioButtonClickedForMilkSubstitutions();
+
+        //Figure out the espresso shot option selected
+        RadioButton espressoShotOption = onRadioButtonClickedForEspressoShotOptions();
 
         //Figure out if the user wants whipped cream topping
         CheckBox whippedCreamCheckBox = findViewById(R.id.whipped_cream_checkBox);
         boolean hasWhippedCream = whippedCreamCheckBox.isChecked();
         //Log.v("MainActivity", "Has whipped cream: " + hasWhippedCream);
 
-
         //Figure out if the user wants chocolate topping
         CheckBox chocolateCheckBox = findViewById(R.id.chocolate_checkBox);
         boolean hasChocolate = chocolateCheckBox.isChecked();
         //Log.v("MainActivity", "Has chocolate: " + chocolate_checkBox);
 
+        //calculate price for coffee order
         int price = calculatePrice(hasChocolate, hasWhippedCream, radioBtnSelected);
         String OrderMessage = createOrderSummary(price, name, hasWhippedCream,
-                hasChocolate, radioBtnSelected);
+                hasChocolate, radioBtnSelected, milkSubstitutionSelected, espressoShotOption);
 
         //allows user to send order summary to his/her email, using email app
         Intent intent = new Intent(Intent.ACTION_SENDTO);
@@ -76,13 +81,42 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
+     * Determine which radio button was selected for the milk substitution
+     * @return milkSubstitution
+     */
+    public RadioButton onRadioButtonClickedForMilkSubstitutions(){
+        RadioGroup radioGroupSubstitutions = findViewById(R.id.radioSubstitutions);
+        int selectedID = radioGroupSubstitutions.getCheckedRadioButtonId();
+        RadioButton milkSubstitution = findViewById(selectedID);
+
+        return milkSubstitution;
+    }
+
+    /**
+     * Determine which radio button was selected for espresso shot option
+     * @return espressoOption
+     */
+    public RadioButton onRadioButtonClickedForEspressoShotOptions(){
+        RadioGroup radioGroupEspressoOption = findViewById(R.id.radioEspressoShotOptions);
+        int selectedID = radioGroupEspressoOption.getCheckedRadioButtonId();
+        RadioButton espressoOption = findViewById(selectedID);
+
+        return espressoOption;
+    }
+
+    /**
      * calculates the price of the order
      * @param addChocolate whether or not the user wants chocolate topping
      * @param addWhippedCream whether or not the user wants whipped cream topping
      * @param coffeeType coffee type user selected to order
      * @return total price
      */
+<<<<<<< HEAD
     private int calculatePrice(boolean addChocolate, boolean addWhippedCream, RadioButton coffeeType){
+=======
+    private int calculatePrice(boolean addChocolate, boolean addWhippedCream,
+                               RadioButton radioButton){
+>>>>>>> substitutions
         int chargeForChocolate = 2;
         int chargeForWhippedCream = 1;
         int basePrice = 2;
@@ -115,15 +149,18 @@ public class MainActivity extends AppCompatActivity {
      * @return text summary
      */
     private String createOrderSummary(int price, String name, boolean hasWhippedCream,
-                                      boolean addChocolate, RadioButton coffeeType){
+                                      boolean addChocolate, RadioButton coffeeType,
+                                      RadioButton milkSubstitution, RadioButton espressoShotOption){
         String whipped = hasWhippedCream(hasWhippedCream);
         String chocolate = hasChocolate(addChocolate);
 
         String priceMessage = getString(R.string.order_summary_name,name) + "\n" +
                 getString(R.string.order_summary_coffee_type, coffeeType.getText()) + "\n" +
-                getString(R.string.order_summary_add_whipped_cream, whipped) + "\n" +
+                getString(R.string.order_summary_milkSubstitution, milkSubstitution.getText())
+                + "\n" + getString(R.string.order_summary_add_whipped_cream, whipped) + "\n" +
                 getString(R.string.order_summary_add_chocolate,chocolate) + "\n" +
-                getString(R.string.order_summary_quantity, quantity) + "\n" +
+                getString(R.string.order_summary_espressoShotOption, espressoShotOption.getText())
+                + "\n" + getString(R.string.order_summary_quantity, quantity) + "\n" +
                 getString(R.string.order_summary_total, price) + "\n" +
                 getString(R.string.thank_you);
         return priceMessage;

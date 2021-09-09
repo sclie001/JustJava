@@ -57,6 +57,74 @@
         </RadioGroup>
 
         <TextView
+            android:id="@+id/milk_substitutions"
+            style="@style/HeaderTextStyle"
+            android:text="@string/milk_substitution" />
+
+        <RadioGroup
+            android:id="@+id/radioSubstitutions"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <RadioButton
+                android:id="@+id/soyMilk"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="24dp"
+                android:text="@string/soyMilk_text"
+                android:textSize="16sp"/>
+
+            <RadioButton
+                android:id="@+id/coconutMilk"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="24dp"
+                android:text="@string/coconutMilk_text"
+                android:textSize="16sp" />
+
+            <RadioButton
+                android:id="@+id/noSubstitution"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="24dp"
+                android:text="@string/noSubstitution"
+                android:textSize="16sp" />
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/shotOptions_header"
+            style="@style/HeaderTextStyle"
+            android:text="@string/shotOptions_text" />
+
+        <RadioGroup
+            android:id="@+id/radioEspressoShotOptions"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/shotOptions_text">
+
+            <RadioButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="24dp"
+                android:text="@string/singleShot_text"
+                android:textSize="16sp"/>
+
+            <RadioButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="24dp"
+                android:text="@string/doubleShot_text"
+                android:textSize="16sp"/>
+
+            <RadioButton
+                android:id="@+id/noEspressoShot"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="24dp"
+                android:text="@string/noEspressoShot_text"
+                android:textSize="16sp" />
+        </RadioGroup>
+
+        <TextView
             android:id="@+id/toppings_header"
             style="@style/HeaderTextStyle"
             android:text="@string/toppings_text" />

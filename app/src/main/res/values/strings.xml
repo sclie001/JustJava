@@ -24,6 +24,30 @@
     <!-- Chocolate check box text for the kind of topping [CHAR LIMIT=-20] -->
     <string name="chocolate_text">Chocolate</string>
 
+    <!-- Header text for Milk substitutions [CHAR LIMIT=-20] -->
+    <string name="milk_substitution">Milk Substitution</string>
+
+    <!-- Radio button text for soy milk substitution [CHAR LIMIT=-20] -->
+    <string name="soyMilk_text">Soy Milk</string>
+
+    <!-- Radio button text for coconut milk substitution [CHAR LIMIT=-20] -->
+    <string name="coconutMilk_text">Coconut Milk</string>
+
+    <!-- Radio button text for no substitution [CHAR LIMIT=20] -->
+    <string name="noSubstitution">None</string>
+
+    <!-- Header text for espresso shot options [CHAR LIMIT=20]-->
+    <string name="shotOptions_text">Espresso shot options</string>
+
+    <!-- Radio button text for single shot [CHAR LIMIT=20] -->
+    <string name="singleShot_text">Single shot</string>
+
+    <!-- Radio button text for double shot [CHAR LIMIT=20] -->
+    <string name="doubleShot_text">Double shot</string>
+
+    <!-- Radio button text for no shot [CHAR LIMIT=20] -->
+    <string name="noEspressoShot_text">None</string>
+
     <!-- Header text for the quantity of drinks the user wants to order -->
     <string name="quantity_text">Quantity</string>
 
@@ -31,10 +55,10 @@
     <string name="increment_button" translatable="false">+</string>
     <string name="decrement_button" translatable="false">-</string>
 
-    <!-- button text for the user to press in order to place the order -->
+    <!-- button text for the user to press in order to place the order [CHAR LIMIT=-20] -->
     <string name="order_button">Order</string>
 
-    <!-- Thank you message for the order summary [CHAR LIMIT=NONE] -->
+    <!-- Thank you message for the order summary [CHAR LIMIT=20] -->
     <string name="thank_you">Thank You!</string>
 
     <!--Name for the order summary. It will be shown in the format, "Name: Amy"
@@ -44,11 +68,17 @@
     <!-- Coffee Types questions on the order summary along with it's text value -->
     <string name="order_summary_coffee_type">Coffee type: %s</string>
 
+    <!-- Substitution question on the order summary along with it's text value -->
+    <string name="order_summary_milkSubstitution">Milk Substitution: %s</string>
+
     <!-- Topping questions on the order summary along with yes/no values -->
     <string name="order_summary_add_whipped_cream">Add whipped cream?
         <xliff:g id="whipped_cream">%s</xliff:g></string>
     <string name="order_summary_add_chocolate">Add chocolate?
         <xliff:g id="chocolate">%s</xliff:g></string>
+
+    <!-- Espresso shot option question on the order summary along with yes/no values -->
+    <string name="order_summary_espressoShotOption">Espresso shot?: %s</string>
 
     <!-- Quantity of coffees user ordered for order summary -->
     <string name="order_summary_quantity">Quantity: <xliff:g id="quantity" example="2"> %d</xliff:g></string>
