@@ -92,7 +92,7 @@ public class MainActivity extends AppCompatActivity {
                 noMilkSubstitution.setChecked(true);
             }
         }
-        //if user selects hot latte, user can select an espresso shot
+        //if user selects hot latte, user can select an espresso shot and/or milk substitution
         if(R.id.hotLatte == viewId){
             if(checked) {
                 setEspressoShotToClickable();
