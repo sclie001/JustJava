@@ -78,6 +78,8 @@ public class MainActivity extends AppCompatActivity {
 
         int viewId = view.getId();
 
+        //if user selects regular coffee, espresso option and milk substitution radio buttons are
+        // not clickable
         if(R.id.regularCoffee == viewId){
             if(checked){
                 setEspressoShotToNotClickable();
