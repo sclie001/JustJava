@@ -18,6 +18,7 @@ import androidx.appcompat.app.AppCompatActivity;
  */
 public class MainActivity extends AppCompatActivity {
     int quantity = 2;
+    RadioButton coffeeTypeSelected;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,9 +33,6 @@ public class MainActivity extends AppCompatActivity {
         EditText nameField = findViewById((R.id.name_field));
         String name = nameField.getText().toString();
         //Log.v("MainActivity", "What is your name: " + name);
-
-        //Figure out what type of coffee the user wants
-        RadioButton radioBtnSelected = onRadioButtonClickedCoffeeType();
 
         //Figure out the milk substitution selected
         RadioButton milkSubstitutionSelected = onRadioButtonClickedForMilkSubstitutions();
@@ -53,9 +51,9 @@ public class MainActivity extends AppCompatActivity {
         //Log.v("MainActivity", "Has chocolate: " + chocolate_checkBox);
 
         //calculate price for coffee order
-        int price = calculatePrice(hasChocolate, hasWhippedCream, radioBtnSelected);
+        int price = calculatePrice(hasChocolate, hasWhippedCream, espressoShotOption);
         String OrderMessage = createOrderSummary(price, name, hasWhippedCream,
-                hasChocolate, radioBtnSelected, milkSubstitutionSelected, espressoShotOption);
+                hasChocolate, milkSubstitutionSelected, espressoShotOption);
 
         //allows user to send order summary to his/her email, using email app
         Intent intent = new Intent(Intent.ACTION_SENDTO);
@@ -70,14 +68,72 @@ public class MainActivity extends AppCompatActivity {
 
     /**
      * Determine which radio button was selected for coffee type
-     * @return coffee type selected
      */
-    public RadioButton onRadioButtonClickedCoffeeType(){
-        RadioGroup radioGroup = findViewById(R.id.radioCoffeeType);
+    public void onRadioButtonClicked(View view){
+        /*RadioGroup radioGroup = findViewById(R.id.radioCoffeeType);
         int selectedID = radioGroup.getCheckedRadioButtonId();
-        RadioButton coffeeType = findViewById(selectedID);
+        RadioButton coffeeType = findViewById(selectedID);*/
 
-        return coffeeType;
+        boolean checked = ((RadioButton) view).isChecked();
+
+        int viewId = view.getId();
+
+        //if user selects regular coffee, espresso option and milk substitution radio buttons are
+        // not clickable
+        if(R.id.regularCoffee == viewId){
+            if(checked){
+                setEspressoShotToNotClickable();
+                coffeeTypeSelected = findViewById(viewId);
+                RadioButton noEspresso = findViewById(R.id.noEspressoShot);
+                noEspresso.setChecked(true);
+            }
+        }
+        //if user selects hot latte, user can select an espresso shot
+        if(R.id.hotLatte == viewId){
+            if(checked) {
+                setEspressoShotToClickable();
+                coffeeTypeSelected = findViewById(viewId);
+            }
+        }
+        //if user selects iced coffee, user can select milk substitutions and toppings
+        if(R.id.icedCoffee == viewId){
+            if(checked){
+                setEspressoShotToNotClickable();
+                coffeeTypeSelected = findViewById(viewId);
+                RadioButton noEspresso = findViewById(R.id.noEspressoShot);
+                noEspresso.setChecked(true);
+
+            }
+
+        }
+    }
+
+    /**
+     * Set espresso shot radio buttons to not be clickable
+     */
+    private void setEspressoShotToNotClickable(){
+        RadioButton noEspressoShot = findViewById(R.id.noEspressoShot);
+        noEspressoShot.setClickable(false);
+
+        RadioButton singleEspressoShot = findViewById(R.id.singleEspressoShot);
+        singleEspressoShot.setClickable(false);
+
+        RadioButton doubleEspressoShot = findViewById(R.id.doubleEspressoShot);
+        doubleEspressoShot.setClickable(false);
+    }
+
+    /**
+     * Set espresso shot radio buttons to clickable
+     */
+    private void setEspressoShotToClickable(){
+        RadioButton noEspressoShot = findViewById(R.id.noEspressoShot);
+        noEspressoShot.setClickable(true);
+
+        RadioButton singleEspressoShot = findViewById(R.id.singleEspressoShot);
+        singleEspressoShot.setClickable(true);
+
+        RadioButton doubleEspressoShot = findViewById(R.id.doubleEspressoShot);
+        doubleEspressoShot.setClickable(true);
     }
 
     /**
@@ -108,19 +164,32 @@ public class MainActivity extends AppCompatActivity {
      * calculates the price of the order
      * @param addChocolate whether or not the user wants chocolate topping
      * @param addWhippedCream whether or not the user wants whipped cream topping
-     * @param coffeeType coffee type user selected to order
+     * @param espressoShotOption whether or not the user wants an extra shot for a hot latte
      * @return total price
      */
-    private int calculatePrice(boolean addChocolate, boolean addWhippedCream, RadioButton coffeeType){
+    private int calculatePrice(boolean addChocolate, boolean addWhippedCream,
+                               RadioButton espressoShotOption){
         int chargeForChocolate = 2;
         int chargeForWhippedCream = 1;
+        int espressoShotCharge = 1;
         int basePrice = 2;
 
-        if(coffeeType.getId() == R.id.icedCoffee){
+
+        if(coffeeTypeSelected.getId() == R.id.icedCoffee){
             basePrice = 3;
         }
-        else if(coffeeType.getId() == R.id.hotLatte){
+        else if(coffeeTypeSelected.getId() == R.id.hotLatte
+                && espressoShotOption.getId() == R.id.singleEspressoShot){
+
             basePrice = 4;
+            basePrice = basePrice + espressoShotCharge;
+
+        }
+        else if(coffeeTypeSelected.getId() == R.id.hotLatte
+                && espressoShotOption.getId() == R.id.doubleEspressoShot){
+
+            basePrice = 4;
+            basePrice = basePrice + (2 * espressoShotCharge);
         }
 
         //add $1 if the user selects the whipped cream topping
@@ -140,17 +209,16 @@ public class MainActivity extends AppCompatActivity {
      * @param hasWhippedCream is whether or not the user wants whipped cream
      * @param addChocolate is whether or not the user wants chocolate topping
      * @param name of the customer
-     * @param coffeeType coffee type user selected to order
      * @return text summary
      */
     private String createOrderSummary(int price, String name, boolean hasWhippedCream,
-                                      boolean addChocolate, RadioButton coffeeType,
-                                      RadioButton milkSubstitution, RadioButton espressoShotOption){
+                                      boolean addChocolate, RadioButton milkSubstitution,
+                                      RadioButton espressoShotOption){
         String whipped = hasWhippedCream(hasWhippedCream);
         String chocolate = hasChocolate(addChocolate);
 
         String priceMessage = getString(R.string.order_summary_name,name) + "\n" +
-                getString(R.string.order_summary_coffee_type, coffeeType.getText()) + "\n" +
+                getString(R.string.order_summary_coffee_type, coffeeTypeSelected.getText()) + "\n" +
                 getString(R.string.order_summary_milkSubstitution, milkSubstitution.getText())
                 + "\n" + getString(R.string.order_summary_add_whipped_cream, whipped) + "\n" +
                 getString(R.string.order_summary_add_chocolate,chocolate) + "\n" +
