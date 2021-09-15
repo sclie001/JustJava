@@ -37,7 +37,7 @@
                 android:layout_height="wrap_content"
                 android:paddingLeft="24dp"
                 android:text="@string/regularCoffee_text"
-                android:onClick="onRadioButtonClicked"
+                android:onClick="onRadioButtonClickedCoffeeType"
                 android:textSize="16sp"/>
 
             <RadioButton
@@ -46,7 +46,7 @@
                 android:layout_height="wrap_content"
                 android:paddingLeft="24dp"
                 android:text="@string/icedCoffee_text"
-                android:onClick="onRadioButtonClicked"
+                android:onClick="onRadioButtonClickedCoffeeType"
                 android:textSize="16sp" />
 
             <RadioButton
@@ -55,7 +55,7 @@
                 android:layout_height="wrap_content"
                 android:paddingLeft="24dp"
                 android:text="@string/hotLatte_text"
-                android:onClick="onRadioButtonClicked"
+                android:onClick="onRadioButtonClickedCoffeeType"
                 android:textSize="16sp"/>
         </RadioGroup>
 

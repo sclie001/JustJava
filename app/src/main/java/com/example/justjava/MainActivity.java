@@ -69,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
     /**
      * Determine which radio button was selected for coffee type
      */
-    public void onRadioButtonClicked(View view){
+    public void onRadioButtonClickedCoffeeType(View view){
         /*RadioGroup radioGroup = findViewById(R.id.radioCoffeeType);
         int selectedID = radioGroup.getCheckedRadioButtonId();
         RadioButton coffeeType = findViewById(selectedID);*/
