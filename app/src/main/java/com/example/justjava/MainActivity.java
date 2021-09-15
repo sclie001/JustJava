@@ -86,12 +86,17 @@ public class MainActivity extends AppCompatActivity {
                 coffeeTypeSelected = findViewById(viewId);
                 RadioButton noEspresso = findViewById(R.id.noEspressoShot);
                 noEspresso.setChecked(true);
+
+                setMilkSubstitutionNotClickable();
+                RadioButton noMilkSubstitution = findViewById(R.id.noSubstitution);
+                noMilkSubstitution.setChecked(true);
             }
         }
         //if user selects hot latte, user can select an espresso shot
         if(R.id.hotLatte == viewId){
             if(checked) {
                 setEspressoShotToClickable();
+                setMilkSubstitutionToClickable();
                 coffeeTypeSelected = findViewById(viewId);
             }
         }
@@ -103,9 +108,36 @@ public class MainActivity extends AppCompatActivity {
                 RadioButton noEspresso = findViewById(R.id.noEspressoShot);
                 noEspresso.setChecked(true);
 
+                setMilkSubstitutionToClickable();
+
             }
 
         }
+    }
+
+    /**
+     * set milk substitutions radio buttons to not be clickable
+     */
+    private void setMilkSubstitutionNotClickable(){
+        RadioButton soyMilk = findViewById(R.id.soyMilk);
+        soyMilk.setClickable(false);
+
+        RadioButton coconutMilk = findViewById(R.id.coconutMilk);
+        coconutMilk.setClickable(false);
+    }
+
+    /**
+     * Set milk substitution radio buttons to be clickable
+     */
+    private void setMilkSubstitutionToClickable(){
+        RadioButton soyMilk = findViewById(R.id.soyMilk);
+        soyMilk.setClickable(true);
+
+        RadioButton coconutMilk = findViewById(R.id.coconutMilk);
+        coconutMilk.setClickable(true);
+
+        RadioButton noSubstitution = findViewById(R.id.noSubstitution);
+        noSubstitution.setClickable(true);
     }
 
     /**
